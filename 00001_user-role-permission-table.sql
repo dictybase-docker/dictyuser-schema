@@ -87,7 +87,7 @@ create table auth_user_role (
     auth_user_role_id SERIAL not null,
     auth_user_id int not null,
     auth_role_id int not null,
-    PRIMARY KEY(auth_user_role_id);
+    PRIMARY KEY(auth_user_role_id),
     FOREIGN KEY (auth_user_id) references auth_user(auth_user_id) on delete cascade INITIALLY DEFERRED,
     FOREIGN KEY (auth_role_id) references auth_role(auth_role_id) on delete cascade INITIALLY DEFERRED
 );
