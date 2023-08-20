@@ -93,9 +93,3 @@ create table auth_user_role (
 );
 
 COMMENT ON TABLE auth_user_role IS 'Linking table between user and role';
-
--- +goose Down
-
-DROP TABLE auth_permission, auth_role, auth_role_permission,
-    auth_user, auth_user_info, auth_user_role; 
--- SQL in this section is executed when the migration is rolled back.
