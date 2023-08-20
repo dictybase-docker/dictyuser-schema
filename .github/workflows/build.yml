@@ -25,7 +25,7 @@ jobs:
         uses: docker/metadata-action@v4
         with: 
           images: |
-            ${{ github.repository }}
+            dictybase-docker/dictyuser-schema
           tags: |
             type=ref,event=branch
             type=sha,format=short,prefix={{branch}}-
