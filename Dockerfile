@@ -7,3 +7,5 @@ RUN apk --no-cache add ca-certificates
 COPY --from=0 /go/bin/goose /usr/local/bin/
 RUN mkdir -p /usr/src/appdata
 COPY *.sql /usr/src/appdata/
+COPY *.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/install_schema.sh
