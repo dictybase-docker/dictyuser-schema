@@ -28,6 +28,3 @@ It allows an individual user to authenticate with multiple providers';
 COMMENT ON COLUMN auth_user_provider.email IS 'Email of the user that is provided to the third party provider';
 
 COMMENT ON COLUMN auth_user_provider.name IS 'Name of the user that is provided to the third party provider.';
--- +goose Down
-DROP TABLE auth_provider, auth_user_provider;
--- SQL in this section is executed when the migration is rolled back.
