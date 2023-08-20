@@ -28,13 +28,3 @@ CREATE TRIGGER updated_at_auth_role
     FOR EACH ROW EXECUTE PROCEDURE  updated_at_column();
 -- +goose StatementEnd
 
--- +goose Down
-ALTER TABLE auth_user_provider
-    ALTER COLUMN email TYPE citext not null,
-    DROP CONSTRAINT fk_auth_user,
-    DROP COLUMN auth_user_id,
-    DROP COLUMN identifier,
-    ADD COLUMN name txt not null;
-
-DROP FUNCTION IF EXISTS updated_at_column();
-
