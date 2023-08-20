@@ -2,7 +2,7 @@ FROM golang:1.20.7-alpine3.18
 RUN apk add --no-cache git build-base \
     && go install github.com/pressly/goose/v3/cmd/goose@latest
 
-FROM alpine:3.18
+FROM postgres:14-alpine
 RUN apk --no-cache add ca-certificates
 COPY --from=0 /go/bin/goose /usr/local/bin/
 RUN mkdir -p /usr/src/appdata
